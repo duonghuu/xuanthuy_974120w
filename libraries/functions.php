@@ -895,7 +895,7 @@ function create_thumb($file, $width, $height, $folder,$file_name,$zoom_crop='1',
 
   $quant = 90;
   $myExpType = (!empty($ext_thumb))? $ext_thumb: 'JPEG';
-  $new_file=$name.'-'.fns_Rand_digit(0,9,4).'_'.round($width).'x'.
+  $new_file=$file_name.'-'.fns_Rand_digit(0,9,4).'_'.round($width).'x'.
   round($height).'.'.$myExpType;
   $pathto = $folder.$new_file;
   if ($zoom_crop==1) {

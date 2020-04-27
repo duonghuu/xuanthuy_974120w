@@ -25,6 +25,17 @@
                     <?php //phanquyen_menu('Quản lý mã giảm giá','news','man','coupon'); ?>
                 </ul>
             </li>
+
+            <li class="categories_li <?php if($_GET['type']=='hai-san')
+            echo ' activemenu' ?>" id="menu_hs"><a href="" title="" class="exp">
+                <span>Hải sản sống</span><strong></strong></a>
+                <ul class="sub">
+                    <?php phanquyen_menu('Danh mục cấp 1','product','man_danhmuc','hai-san'); ?>
+                    <?php phanquyen_menu('Danh mục cấp 2','product','man_list','hai-san'); ?>
+                    <?php phanquyen_menu('Hải sản sống','product','man','hai-san'); ?>
+                </ul>
+            </li>
+
             <li class="categories_li <?php if(in_array($_GET['type'], array('thong-tin',
             'chinh-sach','vi-sao','txtvi-sao','y-kien','txty-kien','thu-vien',
             'tin-tuc','txttin-tuc','tuyen-dung')) or $_GET['com']=='vnexpress') 
@@ -117,7 +128,7 @@ $_GET['com']=='user') echo ' activemenu' ?>" id="menu_cp"><a href="" title="" cl
         <?php phanquyen_menu('Cấu hình thông tin Website','company','capnhat',''); ?>
         <?php //phanquyen_menu('Quản lý hotline','news','man','hotline'); ?>
         <?php //phanquyen_menu('Quản lý zalo','news','man','zalo'); ?>
-        <?php //phanquyen_menu('Quản lý chi nhánh','news','man','diachi'); ?>
+        <?php phanquyen_menu('Quản lý chi nhánh','news','man','diachi'); ?>
         <?php phanquyen_menu('Quản lý video','video','man','video'); ?>
         <?php // phanquyen_menu('Tags','news','man','tags'); ?>
         <li <?php if($_GET['act']=='admin_edit') echo ' class="this"' ?> >

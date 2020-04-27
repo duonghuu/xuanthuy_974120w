@@ -1287,7 +1287,8 @@ function save_hinhthem($p_type="",$id_sp){
                     $file_name = images_name($_FILES['files']['name'][$i]);
                     $photo = upload_photos($file, _format_duoihinh, _upload_hinhthem,$file_name);
                     $data1['photo'] = $photo;
-                    $data1['thumb'] = create_thumb($data1['photo'], _width_thumb, _height_thumb, _upload_hinhthem,$file_name,_style_thumb);
+                    $data1['thumb'] = create_thumb($data1['photo'], _width_thumb, _height_thumb, 
+                        _upload_hinhthem,$file_name,_style_thumb);
                     $data1['stt'] = $_POST['stthinh'][$i];
                     $data1['type'] = $p_type;
                     $data1['id_hinhanh'] = $id_sp;
