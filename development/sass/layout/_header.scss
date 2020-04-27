@@ -13,58 +13,72 @@
     @include absolute($left: 0);
 }
 %hd-hotline-style {
-    @include absolute($right: 0px, $top: 50%);
-    transform: translateY(-50%);
-    @include boxstyle($display: inline-flex, $justify-content: space-between, 
-      $align-items: center);
-    @include p-el(before, $el-width: 231px, $el-height: 76px){
-      @include bg("hd-hotline.png",$background-repeat: no-repeat,$background-size: null,$background-position: 0 0);
-      @include relative($left: 0px, $top: 0px);
-    };
-    a{
-        @include setFont(18px, #c8000a, 400, $font-UTM-Magnesium );
-        @include absolute($left: 70px, $top: 33px);
-        @include text-stroke(0.7px #fff);;
+    @include grid(inline-flex, $flex-wrap: wrap, $justify-content: space-between, 
+      $align-items: null, $gutter: null);
+    img{
+        margin-right: 5px;
+    }
+    p{
+        margin-bottom: 0;
+        span{
+            display: block;
+            @include setFont(20px, #333, 400, $font-UTM-Androgyne );
+            @include text-shadow(-2px,-3px,2px,#fff, 2px,4px,2px,#fff);
+            text-transform: uppercase;
+        }
+        a{
+            display: block;
+            @include setFont(22px, $theme-color, 400, $font-UTM-Androgyne );
+            @include text-shadow(-2px,-3px,2px,#fff, 2px,4px,2px,#fff);
+        }
     }
 }
 .hd-hotline{
     @extend %hd-hotline-style;
 }
+.hd-diachi{
+    img{}
+        p{
+            span{}
+            a{
+                @include setFont(18px, #c8000a, 400, $font-UTM-Magnesium );
+            }
+        }
+}
 .hd-bg {
     width: 100%;
     z-index: 450;
     @include relative($left: 0);
-    @include bg("banner.png",$background-repeat: repeat,$background-size: null,$background-position: 0 0);
+    @include bg("header.jpg",$background-repeat: no-repeat,$background-size: cover,
+        $background-position: center top); 
 }
 .hd-flex{
-    @include boxstyle($display: flex, $justify-content: center, 
-        $align-items: flex-start);
-    min-height: 150px;
+    @include boxstyle($display: flex, $justify-content: space-between, 
+        $align-items: center);
+    min-height: 110px;
     position: relative;
+    .hd-left{
+
+    }
     .hd-info{
-        text-align: center; 
-        h2{
-            @include setFont(40px, #e01c1a, 400, $font-UTM-Loko);
-            margin: 20px 0 0;
-            text-transform: uppercase;
-        }
-        .slogan{
-            @include setFont(30px, #333, 400, $font-SVN-Lobster);
-        }
-        p{
-            @include setFont(18px, #333, 400);
-        }
+        @include flex(1);
+        @include boxstyle($display: flex, $justify-content: flex-end, 
+            $align-items: center);
     }
 }
 .logo{
-    display: block;
-    @include absolute($left: 0px, $top: 50%);
-    transform: translateY(-50%);
+    display: inline-block;
     img{
-        height: 150px;
+        height: 110px;
         @include transition(all 0.4s ease);
         @include when-inside('.fixed'){
-            height: 120px;
+            height: 90px;
         }
+    }
+}
+.banner{
+    display: inline-block;
+    img{
+        height: 110px;
     }
 }

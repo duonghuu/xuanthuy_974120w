@@ -93,7 +93,7 @@ function get_item(){
 //===========================================================
 function save_item(){
 	global $d,$config,$urlcu;
-	$file_name = $_FILES['file']['name'];
+	$file_name = images_name($_FILES['file']['name']);
 	if(empty($_POST)) transfer("Không nhận được dữ liệu", "index.php?com=video&act=man".$urlcu);
 	$id = isset($_POST['id']) ? themdau($_POST['id']) : "";
 	if($id){

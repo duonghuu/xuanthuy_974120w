@@ -91,7 +91,7 @@ function save_photo(){
 	if(empty($_POST)) transfer("Không nhận được dữ liệu", "index.php?com=slider&act=man_photo".$urlcu);
 	$id = isset($_POST['id']) ? themdau($_POST['id']) : "";
 	if($id){
-			$file_name = $_FILES['file']['name'];
+			$file_name = images_name($_FILES['file']['name']);
 			if($photo = upload_image("file", _format_duoihinh, _upload_hinhanh,$file_name)){
 				$data['photo'] = $photo;
 				if(_width_thumb > 0 and _height_thumb > 0)
@@ -130,7 +130,7 @@ function save_photo(){
 	}
 	{ 			
 		for($i=0; $i<3; $i++){
-				$file_name = $_FILES['file'.$i]['name'];
+				$file_name = images_name($_FILES['file'.$i]['name']);
 				if($data['photo'] = upload_image("file".$i, _format_duoihinh, _upload_hinhanh,$file_name))
 					{	
 						if(_width_thumb > 0 and _height_thumb > 0)

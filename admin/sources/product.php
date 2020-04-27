@@ -258,8 +258,8 @@ function copy_item(){
 //Save sản phẩm
 function save_item(){
     global $d,$config,$urlcu;
-    $file_name = $_FILES['file']['name'];
-    $file2_name = $_FILES['file2']['name'];
+    $file_name = images_name($_FILES['file']['name']);
+    $file2_name = images_name($_FILES['file2']['name']);
     if(empty($_POST)) transfer("Không nhận được dữ liệu", "index.php?com=product&act=man".$urlcu);
     $id = isset($_POST['id']) ? themdau($_POST['id']) : "";
     $data = process_quote($_POST['data']);
@@ -485,7 +485,7 @@ function get_loai(){
 }
 function save_loai(){
     global $d,$config,$urlcu;
-    $file_name=$_FILES['file']['name'];
+    $file_name=images_name($_FILES['file']['name']);
     if(empty($_POST)) transfer("Không nhận được dữ liệu", "index.php?com=product&act=man_item".$urlcu);
     $id = isset($_POST['id']) ? themdau($_POST['id']) : "";
     if($id){
@@ -658,7 +658,7 @@ function get_cat(){
 }
 function save_cat(){
     global $d,$config,$urlcu;
-    $file_name=$_FILES['file']['name'];
+    $file_name=images_name($_FILES['file']['name']);
     if(empty($_POST)) transfer("Không nhận được dữ liệu", "index.php?com=product&act=man_cat".$urlcu);
     $id = isset($_POST['id']) ? themdau($_POST['id']) : "";
     $data['id_danhmuc'] = (int)$_POST['id_danhmuc'];
@@ -841,7 +841,7 @@ function get_list(){
 ##====================================================
 function save_list(){
     global $d,$config,$urlcu;
-    $file_name=$_FILES['file']['name'];
+    $file_name=images_name($_FILES['file']['name']);
     if(empty($_POST)) transfer("Không nhận được dữ liệu", "index.php?com=product&act=man_list".$urlcu);
     $id = isset($_POST['id']) ? themdau($_POST['id']) : "";
     $data = array();
@@ -1044,8 +1044,8 @@ function get_danhmuc(){
 //===========================================================
 function save_danhmuc(){
     global $d,$config,$urlcu;
-    $file_name=$_FILES['file']['name'];
-    $file2_name=$_FILES['file2']['name'];
+    $file_name=images_name($_FILES['file']['name']);
+    $file2_name=images_name($_FILES['file2']['name']);
     if(empty($_POST)) transfer("Không nhận được dữ liệu", "index.php?com=product&act=man_danhmuc".$urlcu);
     $id = isset($_POST['id']) ? themdau($_POST['id']) : "";
     $data=array();

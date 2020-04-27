@@ -45,13 +45,15 @@ function save_gioithieu(){
 	if(empty($_POST)) transfer("Không nhận được dữ liệu", "index.php?com=background&act=capnhat&type=".$_REQUEST['type']);
 	
 	foreach ($config['lang'] as $key => $value) {
-		$file_name = $_FILES['file'.$key]['name'];		
+		$file_name = images_name($_FILES['file'.$key]['name']);		
 		if($photo = upload_image("file".$key, _format_duoihinh,_upload_hinhanh,$file_name)){
 			$data['photo'.$key] = $photo;
-			// if(_width_thumb > 0 and _height_thumb > 0)
-			//     $data['thumb'] = create_thumb($data['photo'], _width_thumb, 
-			//         _height_thumb, _upload_hinhanh,$file_name,_style_thumb,_extension_thumb);
+			if(_width_thumb > 0 and _height_thumb > 0)
+			    $data['thumb'] = create_thumb($data['photo'], _width_thumb, 
+			        _height_thumb, _upload_hinhanh,$file_name,_style_thumb,_extension_thumb);
+			$d->reset();			
 			$d->setTable('background');			
+			$d->setWhere('type', $_POST['type']);			
 			$d->select();
 			if($d->num_rows()>0){
 				$row = $d->fetch_array();

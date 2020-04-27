@@ -42,7 +42,7 @@ function get_item(){
 
 function save_item(){
 	global $d,$config;
-	$file_name = $_FILES['file']['name'];
+	$file_name = images_name($_FILES['file']['name']);
 	if(empty($_POST)) transfer("Không nhận được dữ liệu", "index.php?com=title&act=capnhat&type=".$_REQUEST['type']);
 	if($photo = upload_image("file", _format_duoihinh,_upload_hinhanh,$file_name)){
 			$data['photo'] = $photo;

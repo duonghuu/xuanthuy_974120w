@@ -43,8 +43,8 @@ function save_gioithieu(){
 			$toado=$_POST['Latitude'].','.$_POST['Longitude'];
 			$data['toado'] = $toado;
 		}
-	$file_name = $_FILES['favicon']['name'];
-	$dongdau_name = $_FILES['dongdau']['name'];
+	$file_name = images_name($_FILES['favicon']['name']);
+	$dongdau_name = images_name($_FILES['dongdau']['name']);
 
 	if($favicon = upload_image("favicon", _format_duoihinh,_upload_hinhanh,$file_name)){
 			$data['favicon'] = $favicon;

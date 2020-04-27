@@ -4,6 +4,8 @@
       <ul >
         <?php include _template."layout/menu_content.php";?>
       </ul>
+      <?php /* 
+      <button class="openBtn timkiem_icon" ><i class="fas fa-search"></i></button>
       <div id="search">
         <div class="my-search">
           <input type="text" class="form-control keyword" required="true" 
@@ -14,8 +16,6 @@
             <i class="fas fa-search"></i></span>
           </div>
         </div> 
-      <?php /* 
-      <button class="openBtn timkiem_icon" ><i class="fas fa-search"></i></button>
             
       */?>
     <?php /*

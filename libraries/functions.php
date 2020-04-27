@@ -377,11 +377,11 @@ function upload_image($file, $extension, $folder, $newname=''){
   if(isset($_FILES[$file]) && !$_FILES[$file]['error']){
     $ext = end(explode('.',$_FILES[$file]['name']));
     $name = basename($_FILES[$file]['name'], '.'.$ext);
-    if($name!='sitemap')
-    {
-      $name=changeTitle($name).'-'.fns_Rand_digit(0,9,4);
-    }
-    $newname = $name.'.'.$ext;
+    // if($name!='sitemap')
+    // {
+    //   $name=changeTitle($name).'-'.fns_Rand_digit(0,9,4);
+    // }
+    // $newname = $name.'.'.$ext;
     if(strpos($extension, $ext)===false){
      alert('Chỉ hỗ trợ upload file dạng '.$extension);
       return false; // không hỗ trợ
@@ -395,7 +395,7 @@ function upload_image($file, $extension, $folder, $newname=''){
       }
       else
       {
-       $_FILES[$file]['name'] = $newname;
+       $_FILES[$file]['name'] = $newname.'.'.$ext;
      }
      if (!copy($_FILES[$file]["tmp_name"], $folder.$_FILES[$file]['name'])) {
        if ( !move_uploaded_file($_FILES[$file]["tmp_name"], $folder.$_FILES[$file]['name']))                {
@@ -871,10 +871,10 @@ function thumb_bgratio($src_img, $new_w, $new_h){
   return $img_thumb;
 }
 function create_thumb($file, $width, $height, $folder,$file_name,$zoom_crop='1',$ext_thumb='jpeg',$dong='0'){
-   $type = end(explode('.',$file_name));
-   $name = basename($file_name, '.'.$type);
-   $name = changeTitleImage($name);
-   $file_name = $name.'.'.$type;
+   // $type = end(explode('.',$file_name));
+   // $name = basename($file_name, '.'.$type);
+   // $name = changeTitleImage($name);
+   // $file_name = $name.'.'.$type;
    $new_w = $width;
    $new_h = $height;
 
@@ -890,11 +890,11 @@ function create_thumb($file, $width, $height, $folder,$file_name,$zoom_crop='1',
   }
   $src_w=$image_w;
   $src_h=$image_h;
-
+  $image_ext = trim(strtolower(end(explode('.', $image_url))));
   $src_img = Image::make($image_url);
 
   $quant = 90;
-  $myExpType = (!empty($ext_thumb))? $ext_thumb: 'JPEG';
+  $myExpType = (!empty($image_ext))? $image_ext: 'JPEG';
   $new_file=$file_name.'-'.fns_Rand_digit(0,9,4).'_'.round($width).'x'.
   round($height).'.'.$myExpType;
   $pathto = $folder.$new_file;
