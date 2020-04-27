@@ -1,0 +1,318 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+%idx-tit {} 
+%idx-tit-line {
+    content: "";
+    background: url($images-url + "idx-l.png");
+    @include box(134px, 7px);
+    @include relative($bottom: -5px);
+}
+.idx-tit {
+    @include grid($display: flex, $align-items: flex-end, $justify-content: center);
+    position: relative;
+    margin-bottom: 5px;
+    h4 {
+        @include setFont(40px, $theme-color, 400, $font-SVN-Lobster);
+        text-align: center;
+        line-height: 1;
+        margin: 0;
+        img{
+        }
+        span, a {
+            color: $theme-color;
+            display: inline-block;
+            position: relative;
+        }
+    }
+}
+.idx-desc{
+    @include setFont(16px, #333, 400, $font-text);
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    img{
+        @include absolute($left: 50%, $bottom: -30px);
+        margin-left: -26px;
+    }
+}
+.gioithieu{
+    @include bg("about-bg.jpg",$background-repeat: no-repeat,$background-size: cover,$background-position: 0 0);
+    padding: 80px 0;
+    &-wrap{
+        @include clearfix;
+        .imgsp{
+            width: percentage(615/1200);
+            float: left;
+            figure{
+                display: inline-block;
+                position: relative;
+                margin-bottom: 0;
+                img{
+                    margin: 30px 0 0 45px;
+                }
+                @include p-el(before, $el-width: 100%, $el-height: 100%){
+                  border: 7px solid #ffb700;
+                  @include absolute($left: 0px, $top: 0px);
+                  transform: rotate(-8deg);
+                  z-index: -1
+                };
+            }
+        }
+        .info{
+            width: percentage(556/1200);
+            float: right;
+            .ten{
+                @include setFont(48px, $theme-color, 400, $font-UTM-Loko);
+                line-height: 1;
+                margin: 10px 0 30px;
+            }
+            .ten2{
+                @include setFont(20px, #333, 400, $font-SVN-Poppins);
+                margin-bottom: 0;
+            }
+            .desc{
+                @include setFont(14px, #333);
+                margin-bottom: 30px;
+            }
+            .xemthem{
+                @include setFont(14px, #fff);
+                background-color: $theme-color;
+                line-height: 45px;
+                padding: 0 35px;
+                display: inline-block;
+                border-radius: 22px;
+            }
+        }
+    }
+}
+.dmsanpham{
+    background-size: cover;
+    padding: 50px 0;
+    $dmspgap: em(75);
+    &-main{
+        margin: 0 -#{$dmspgap};
+    }
+    &-item{
+        padding: 0 $dmspgap;
+        @include setTagAHover(#fff, $theme-color);
+        a{
+            display: block;
+            width: 290px;
+            margin: 0 auto;
+            @include transition(all 0.3s ease);
+            
+            figure{
+                @include transition(all 0.3s ease);
+                @include box(290px, 290px, 100%);
+                border: 1px dashed #ffb800;
+                padding: 5px;
+                margin-bottom: 25px;
+                img{
+                    @include box(100%, 100%, 100%);
+                }
+            }
+            h2{
+                @include setFont(24px, inherit, 400, $font-SVN-Lobster);
+                @include grid(flex, $flex-wrap: wrap, $justify-content: center, 
+                  $align-items: center, $gutter: null);
+                margin-bottom: 0;
+                min-height: 59px;
+                @include p-el(before, $el-width: 225px, $el-height: 59px){
+                    @include bg("dm-tit.png",$background-repeat: no-repeat,$background-size: null,
+                        $background-position: center center);
+                    z-index: -1;
+                };
+            }
+            @include on-event{
+                figure{
+                    border-color: $theme-color;
+                }
+            };
+        }
+    }
+}
+.thucdon{
+    padding: 50px 0 25px;
+}
+.visao{
+    padding: 50px 0;
+    position: relative;
+    .idx-tit {
+        h4 {
+            span{
+                color: #fff;
+            }
+        }
+    }
+    .idx-desc{
+        color: #fff;
+        img{
+            filter: brightness(0) invert(1);
+        }
+    }
+    .visao-box{
+        @include grid(flex, $flex-wrap: wrap, $justify-content: center, 
+          $align-items: null, $gutter: null);
+        .visao-item{
+            $ty-le-padding: percentage(100/1200);
+            width: 50%;
+            margin-bottom: 40px;
+            @include grid(flex, $flex-wrap: no-wrap, $justify-content: flex-end, 
+              $align-items: null, $gutter: null);
+            article{
+                // width: percentage(375/600);
+                max-width: 393px;
+                @include grid(flex, $flex-wrap: no-wrap, $justify-content: space-between, 
+                  $align-items: center, $gutter: null);
+                figure{
+                    margin: 0 18px;
+                    @include box(116px, 116px, 100%);
+                    @include bg("visao-item.png",$background-repeat: no-repeat,$background-size: cover,$background-position: 0 0);
+                    @include grid(inline-flex, $flex-wrap: null, $justify-content: center, 
+                      $align-items: center, $gutter: null);
+                    img{
+                        max-width: 70px;
+                    }
+                }
+                .info{
+                    @include flex(1);
+                    h5{
+                        @include setFont(24px, #fff, 400, $font-SVN-Lobster);
+                    }
+                    p{
+                        @include setFont(15px, #fff);
+                    }
+                }
+            }
+            &.visao--odd{
+                @include justify-content(flex-start);
+                article{
+                    figure{
+                        order: 1;
+                    }
+                    .info{
+                        text-align: right;
+                    }
+                }
+            }
+            &:first-child{
+                padding-left: $ty-le-padding;
+            }
+            &:nth-child(2){
+                padding-right: $ty-le-padding;
+            }
+        }
+    }
+    @include p-el(after, $el-width: 528px, $el-height: 496px){
+      @include bg("visao-mon.png",$background-repeat: no-repeat,$background-size: cover,$background-position: 0 0);
+      @include absolute($left: 50%, $bottom: -111px);
+      transform: translateX(-50%);
+    };
+}
+.ykien{
+    $padding-value: em(17);
+    padding: 125px 0 50px;
+    background-size: cover;
+    &-main{
+        margin: 0 -#{$padding-value};
+    }
+    &-item{
+        padding: 0 $padding-value;
+        article{
+            @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
+              $align-items: null, $gutter: null);
+            figure{
+                @include box(150px, 150px, 100%);
+                overflow: hidden;
+                position: relative;
+                margin-bottom: 0;
+                img{
+
+                }
+                @include p-el(before, $el-width: 100%, $el-height: 100%){
+                  border: 7px solid rgba(255, 255, 255, 0.3);
+                  border-radius: 100%;
+                  @include absolute($left: 0px, $top: 0px);
+                };
+            }
+            .info{
+                @include flex(1);
+                margin-left: 18px;
+                .desc{
+                    margin-bottom: 15px;
+                    span{
+                        @include setFont(16px, #333, 400, $font-text);
+                        display: inline-block;
+                        line-height: 1.5;
+                        font-style: italic;
+                    }
+                    &+p{
+                        margin-bottom: 20px;
+                    }
+                }
+                p{
+                    @include setFont(14px, #333, 400, $font-text);
+                    margin-bottom: 10px;
+                    strong{
+
+                    }
+                }
+            }
+        }
+    }
+}
+.tin-video{
+    background-color: #f7f7f7;
+    padding: 50px 0 30px;
+    .tin-video-flex{
+        @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
+          $align-items: null, $gutter: null);
+        .tin-bg{
+            width: percentage(580/1200);
+            .slick-slider .slick-list{
+                 
+            }
+        }
+        .tinnb-main{
+            .tinnb-item{
+                
+                a{
+                    padding: 14px 0;
+                    @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
+                      $align-items: null, $gutter: null);
+                    border-bottom: 1px dashed #ccc;
+                    figure{
+                        @include box(124px, 124px, 100%);
+                        overflow: hidden;
+                        margin-bottom: 0;
+                        img{
+
+                        }
+                    }
+                    div.info{
+                        @include flex(1);
+                        margin-left: 20px;
+                        span{
+                            @include setFont(12px, #f00, 700, $font-text);
+                            display: block;
+                        }
+                        h5{
+                            @include setFont(15px, #333, 700, $font-text);
+                            margin-top: 7px;
+                        }
+                        p{
+                            @include setFont(14px, #333, 400, $font-text);
+                            margin-bottom: 0;
+                            line-height: 1.5;
+                        }
+                    }
+                }
+            }
+        }
+        .video-bg{
+            width: percentage(580/1200);
+            padding-top: 20px;
+        }
+    }
+}

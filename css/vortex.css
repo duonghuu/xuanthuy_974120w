@@ -1,0 +1,9 @@
+#vortex {
+	width: 440px;
+	height: 440px;
+	position: relative;
+	z-index: 0;
+	margin: auto;
+	margin-top: 70px;
+	margin-bottom: 50px;
+}

@@ -1,0 +1,17 @@
+@font-face{font-family:'Roboto';src:url('./fonts/RobotoRegular.eot');src:url('./fonts/RobotoRegular.eot') format('embedded-opentype'),url('./fonts/RobotoRegular.woff2') format('woff2'),url('./fonts/RobotoRegular.woff') format('woff'),url('./fonts/RobotoRegular.ttf') format('truetype'),url('./fonts/RobotoRegular.svg#RobotoRegular') format('svg');font-weight:400;font-display:block;}
+@font-face{font-family:'Roboto';src:url('./fonts/RobotoBold.eot');src:url('./fonts/RobotoBold.eot') format('embedded-opentype'),url('./fonts/RobotoBold.woff2') format('woff2'),url('./fonts/RobotoBold.woff') format('woff'),url('./fonts/RobotoBold.ttf') format('truetype'),url('./fonts/RobotoBold.svg#RobotoBold') format('svg');font-weight:700;font-display:block;}
+@font-face{font-family:'Roboto';src:url('./fonts/RobotoMedium.eot');src:url('./fonts/RobotoMedium.eot') format('embedded-opentype'),url('./fonts/RobotoMedium.woff2') format('woff2'),url('./fonts/RobotoMedium.woff') format('woff'),url('./fonts/RobotoMedium.ttf') format('truetype'),url('./fonts/RobotoMedium.svg#RobotoMedium') format('svg');font-weight:500;font-display:block;}
+@font-face{font-family:'Roboto';src:url('./fonts/RobotoBlack.eot');src:url('./fonts/RobotoBlack.eot') format('embedded-opentype'),url('./fonts/RobotoBlack.woff2') format('woff2'),url('./fonts/RobotoBlack.woff') format('woff'),url('./fonts/RobotoBlack.ttf') format('truetype'),url('./fonts/RobotoBlack.svg#RobotoBlack') format('svg');font-weight:900;font-display:block;}
+@font-face{font-family:'Roboto';src:url('./fonts/RobotoLight.eot');src:url('./fonts/RobotoLight.eot') format('embedded-opentype'),url('./fonts/RobotoLight.woff2') format('woff2'),url('./fonts/RobotoLight.woff') format('woff'),url('./fonts/RobotoLight.ttf') format('truetype'),url('./fonts/RobotoLight.svg#RobotoLight') format('svg');font-weight:300;font-display:block;}
+/*@font-face {font-family: 'opensans'; src: url('./fonts/OpenSansRegular.eot'); src: url('./fonts/OpenSansRegular.eot') format('embedded-opentype'), url('./fonts/OpenSansRegular.woff2') format('woff2'), url('./fonts/OpenSansRegular.woff') format('woff'), url('./fonts/OpenSansRegular.ttf') format('truetype'), url('./fonts/OpenSansRegular.svg#OpenSansRegular') format('svg'); font-weight: 400;font-display: block; }
+@font-face {font-family: 'opensans'; src: url('./fonts/OpenSansBold.eot'); src: url('./fonts/OpenSansBold.eot') format('embedded-opentype'), url('./fonts/OpenSansBold.woff2') format('woff2'), url('./fonts/OpenSansBold.woff') format('woff'), url('./fonts/OpenSansBold.ttf') format('truetype'), url('./fonts/OpenSansBold.svg#OpenSansBold') format('svg'); font-weight: 700;font-display: block; }
+@font-face {font-family: 'opensans'; src: url('./fonts/OpenSansSemibold.eot'); src: url('./fonts/OpenSansSemibold.eot') format('embedded-opentype'), url('./fonts/OpenSansSemibold.woff2') format('woff2'), url('./fonts/OpenSansSemibold.woff') format('woff'), url('./fonts/OpenSansSemibold.ttf') format('truetype'), url('./fonts/OpenSansSemibold.svg#OpenSansSemibold') format('svg'); font-weight: 600;font-display: block; }*/
+@font-face {
+    font-family: 'UTMHelvetIns';
+    src: url('./fonts/UTMHelvetIns.eot');
+    src: url('./fonts/UTMHelvetIns.eot') format('embedded-opentype'),
+         url('./fonts/UTMHelvetIns.woff2') format('woff2'),
+         url('./fonts/UTMHelvetIns.woff') format('woff'),
+         url('./fonts/UTMHelvetIns.ttf') format('truetype'),
+         url('./fonts/UTMHelvetIns.svg#UTMHelvetIns') format('svg');
+}

@@ -1,0 +1,94 @@
+.cascade-slider_container {
+  position: relative;
+  min-height:350px;
+  margin: 0 auto;
+  max-width:800px;
+}
+
+.cascade-slider_item {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%) scale(0.1);
+  transition: all 1s ease;
+  opacity: 0;
+  z-index: -1;
+}
+.cascade-slider_item img {
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+}
+.cascade-slider_nav.next.cascade-slider_dot.cur{color:#8139b5;}
+.cascade-slider_item.next h3{display:none !important;}
+.cascade-slider_item.next.box_sider_cascade:after{background:none !important;}
+.cascade-slider_item.next p{display:none !important;}
+.cascade-slider_item.prev h3{display:none !important;}
+.cascade-slider_item.prev p{display:none !important;}
+.cascade-slider_item.next {
+  left: 50%;
+  transform: translateY(-50%) translateX(-150%) scale(0.6);
+  opacity: 1;
+  z-index: 1;
+  bottom: 100px;
+}
+.cascade-slider_item.prev {
+  left: 50%;
+  transform: translateY(-50%) translateX(50%) scale(0.6);
+  opacity: 1;
+  z-index: 1;
+  bottom: 100px;
+}
+.box_sider_cascade a{
+  font-size: 14px;
+  color: #333;
+  margin-top: 20px;
+}
+.box_sider_cascade img{
+  margin-top: 25px;
+}
+.cascade-slider_item.now {
+  top: 55%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%) scale(1);
+  opacity: 1;
+  z-index: 5;
+  width: 100%;
+  text-align: center;
+}
+
+.cascade-slider_arrow {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.53);
+  border-radius: 50%;
+}
+
+.cascade-slider_arrow-left { left: 0; }
+
+.cascade-slider_arrow-right { right: 0; }
+
+.cascade-slider_nav {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+}
+
+.cascade-slider_dot {
+  display: inline-block;
+     width: 10px;
+    height: 10px;
+    margin: 1px;
+  background: #ddd;
+  list-style: none;
+  cursor: pointer;
+  border-radius:50%;
+}
+
+.cascade-slider_dot:hover { background: #555; }
+
+.cascade-slider_dot.cur { background: #8139b5; }

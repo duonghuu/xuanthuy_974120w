@@ -1,0 +1,171 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+%map-style {
+    overflow: hidden;
+    width: 100%;
+    height: $height-map;
+}
+%copyright-font {
+    @include setFont(12px, #fff, 400, $font-text);
+}
+
+
+#footer {
+    position: relative;
+    width: 100%;
+    z-index: 5;
+    background-size: cover;
+    .ft-top{
+        // background-color: $bg-footer;
+    }
+    .ft-flex {
+        @include boxstyle($display: flex, $justify-content: space-between);
+        padding: 30px 0;
+        .ft-logo { 
+            a{
+                img{
+                    
+                }
+            }
+        }
+        .ft-info {
+            position: relative;
+            width: percentage(520/1200);
+            color: #fff;
+        }
+
+
+
+        .ft-bando {
+        }
+
+        .ft-fanpage {
+            width: percentage(280/1200);
+            .fanpageplace {
+                height: 180px;
+                overflow: hidden;
+            }
+        }
+
+        .ft-dknt{
+        }
+
+        .ft-social{
+        }
+        .ft-video{
+        }
+
+        .ft-baiviet {
+            @include flex(1);
+            ul {
+                @extend %reset-list;
+                li {
+                    margin-bottom: 7px;
+                    @include setTagAHover(#fff, #ffb800);
+                    @include setFont(15px, #fff);
+                    i{
+                        margin-right: 5px;
+                    }
+                    a {
+                        position: relative;
+                        padding-left: 10px;
+                        @include boxstyle($display: flex, $align-items: flex-start);
+                        
+                        @include p-el(before, $el-width: null, $el-height: null){
+                          // content: "\f009";
+                          content: "";
+                          // // @include setFont(7px, #fff, 700, $font-awesome);
+                          @include box(3px, 3px, 100%);
+                          @include absolute($left: 0px, $top: 9px);
+                          background-color: #fff;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+    .ft-company {
+        // @include setFont(em(52), #fc0214, 400, $font-SFUBelleRegular );
+        // line-height: 1;
+        // a {
+        //     color: #fc0214;
+        // }
+    }
+
+    .ft-tit {
+        margin-bottom: 30px;
+        text-transform: capitalize;
+        strong, span {
+                position: relative;
+                @include setFont(20px, #fff, 400, $font-SVN-Lobster);
+                @include p-el(before, $el-width: 60px, $el-height: 2px){
+                  background-color: #ffb800;
+                  @include absolute($left: 0px, $bottom: -10px);
+            };
+        }
+
+    }
+
+    .ft-logo{
+        // @include boxstyle($display: flex, $align-items: center);
+        // width: 28.8%;
+        // margin-bottom: 1em;
+        // a{
+        //     display: block;
+        //     img{
+        //         max-width: 400px;
+        //     }
+        // }
+        
+    }
+
+    .copyright {
+        position: relative;
+        @include background-opacity($bg-copyright, 0.5);
+        .ft-wrap {
+            min-height: 40px;
+            @include boxstyle($display: flex, $justify-content: space-between, $align-items: center);
+            position: relative;
+            .text {
+                @extend %copyright-font;
+                margin: 5px 0;
+            }
+
+            ul.ft-thongke {
+                @extend %reset-list;
+
+                @include boxstyle($display: flex);
+                li {
+                    @extend %copyright-font;
+
+                    @include boxstyle($display: flex, $align-items: center);
+                    position: relative;
+                    margin: 5px 0;
+
+                    span {
+                        margin-left: 4px;
+                    }
+
+                    & + li {
+                        margin-left: 2em;
+
+                        &::before {
+                            content: "";
+                            background-color: #fff;
+                            @include box(1px, 12px);
+                            @include absolute($left: -1em);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.codebando, .codebando iframe{
+    // @extend %map-style;
+}
+.mxh{
+    @extend %mxh-style;
+}
