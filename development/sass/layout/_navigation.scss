@@ -33,22 +33,17 @@
 .nav-bg {
     
     @include relative($left: 0, $right: 0);
-    @include flex(1);
-    z-index: 451 !important;
-    background-color: $bg-menu;
+    z-index: 449;
+    @include bg("menu.jpg",$background-repeat: repeat-x,$background-size: null,$background-position: 0 0);
     @include when-inside('.clsindex'){
         
     }
-    @include p-el(before, $el-width: 100%, $el-height: 16px){
-      @include bg("menu-bot.png",$background-repeat: repeat-x,$background-size: null,$background-position: 0 0);
-      left: 0;
-      bottom: -8px;
-    };
 }
 .main-nav {
     @include grid($display: flex, $justify-content: space-between, $align-items: center);
     position: relative;
-    min-height: 46px;
+    min-height: 50px;
+    margin-left: 160px;
     ul{
         @extend %reset-list;
     }
@@ -71,8 +66,8 @@
             &>a {
                 @include boxstyle($display: flex, $align-items: center,
                     $justify-content: center, $flex-wrap: wrap);
-                @include setFont(15px, #fff);
-                min-height: 32px;
+                @include setFont(14px, #fff, 700);
+                min-height: 50px;
                 position: relative;
                 text-align: center;
                 text-transform: uppercase;
@@ -88,10 +83,6 @@
                     color: $color-menu-hover;
                 }
             }
-            @include p-el(after, $el-width: 1px, $el-height: 30px){
-              right: 0;
-              @include bg("menu-line.png",$background-repeat: no-repeat,$background-size: null,$background-position: 0 0);
-            };
             @include doubly()
             {
                 

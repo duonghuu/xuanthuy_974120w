@@ -14,36 +14,66 @@
 }
 %hd-hotline-style {
     @include grid(inline-flex, $flex-wrap: wrap, $justify-content: space-between, 
-      $align-items: null, $gutter: null);
+      $align-items: center, $gutter: null);
     img{
         margin-right: 5px;
+        width: 44px;
     }
     p{
         margin-bottom: 0;
+        @include flex(1);
         span{
             display: block;
-            @include setFont(20px, #333, 400, $font-UTM-Androgyne );
+            @include setFont(18px, #333, 400, $font-UTM-Androgyne );
             @include text-shadow(-2px,-3px,2px,#fff, 2px,4px,2px,#fff);
             text-transform: uppercase;
+            line-height: 1;
         }
         a{
             display: block;
+            line-height: 1;
             @include setFont(22px, $theme-color, 400, $font-UTM-Androgyne );
             @include text-shadow(-2px,-3px,2px,#fff, 2px,4px,2px,#fff);
         }
     }
+    position: relative;
+    @include p-el(after, $el-width: 1px, $el-height: 50px){
+      background-color: #ccc;
+      @include absolute($right: -30px);
+    };
+    @include doubly{
+        margin-left: 60px;
+    };
 }
 .hd-hotline{
     @extend %hd-hotline-style;
 }
 .hd-diachi{
-    img{}
-        p{
-            span{}
-            a{
-                @include setFont(18px, #c8000a, 400, $font-UTM-Magnesium );
-            }
+    @include grid(inline-flex, $flex-wrap: wrap, $justify-content: space-between, 
+      $align-items: center, $gutter: null);
+    img{
+        width: 24px;
+        margin-right: 10px;
+    }
+    p{
+        margin-bottom: 0;
+        @include flex(1);
+
+        span{
+            display: block;
+            @include setFont(11px, #333, 400 );
+            text-transform: capitalize;
+            line-height: 1;
+            margin-bottom: 10px;
         }
+        a{
+            display: block;
+            line-height: 1;
+            text-transform: uppercase;
+            @include setFont(14px, $theme-color, 700 );
+        }
+    }
+    margin-left: 60px;
 }
 .hd-bg {
     width: 100%;
@@ -68,16 +98,18 @@
 }
 .logo{
     display: inline-block;
+    @include absolute($left: 0px, $top: 6px);
     img{
-        height: 110px;
+        height: 155px;
         @include transition(all 0.4s ease);
         @include when-inside('.fixed'){
-            height: 90px;
+            height: 135px;
         }
     }
 }
 .banner{
     display: inline-block;
+    margin-left: 155px;
     img{
         height: 110px;
     }

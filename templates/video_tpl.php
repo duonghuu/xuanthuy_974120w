@@ -1,4 +1,6 @@
-<div class="tieude_giua"><div><?=$title_cat?></div></div>
+<?php /* 
+<div class="tieude_giua"><div><?=$title_cat?></div></div> 
+*/?>
 <div class="video-grid">
     <?php foreach($product as $k => $v) { 
         ?>

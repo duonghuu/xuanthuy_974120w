@@ -24,10 +24,10 @@
          $align-items: center);  
 
         @include doubly(){
-            margin-left: em(15);
+            margin-left: 8px;
         };
         img{
-            max-height: 50px;
+            max-height: 45px;
             object-fit: scale-down;
             @include transition(all 1s ease);  
             &:hover{

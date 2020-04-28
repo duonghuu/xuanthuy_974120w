@@ -302,8 +302,8 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 	function showProduct($v,$options=array(),$k=null){
 		global $lang,$company,$com;
 		$link = get_url($v, $v["type"]);
-		// $giaspgiam = ($v["giakm"]>0)?'<span class="giam">-'.tinh_phantram($v["gia"],$v["giakm"]).
-		// '%</span>':"";
+		$giaspgiam = ($v["giakm"]>0)?'<span class="giam">'.tinh_phantram($v["gia"],$v["giakm"]).
+		'%</span>':"";
 		// $cls_moi = ($v["spmoi"]>0)?'<i class="new">new</i>':"";
 		// $cls_banchay = ($v["spbanchay"]>0)?'<i class="sale"></i>':"";
 		$giasp = ($v["giakm"]>0)?$v["giakm"]:$v["gia"];
@@ -347,6 +347,64 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 		// $linkct = '<a href="#" data-id="'.$v["id"].'" class="muangay">
 		// Thêm vào giỏ</a>';
 		echo $slickdiv.'<div class="pr-box name '.$wowclass.'" >
+		<article>
+				<a href="'.$link.'" class="imgsp zoom_hinh">'.$imgurl.$cls_moi.$cls_banchay.
+				$giaspgiam.'</a> 
+			<div class="info">
+			<h3><a href="'.$link.'">'.$v["ten"].'</a></h3>
+			<p>'.$s_gia.'</p>
+			<div class="xemchitiet"><a href="'.$link.'">Xem chi tiết</a></div>
+			</div>
+		</article></div>'.$slickenddiv;
+	}
+	function showProduct2($v,$options=array(),$k=null){
+		global $lang,$company,$com;
+		$link = get_url($v, $v["type"]);
+		$giaspgiam = ($v["giakm"]>0)?'<span class="giam">'.tinh_phantram($v["gia"],$v["giakm"]).
+		'%</span>':"";
+		// $cls_moi = ($v["spmoi"]>0)?'<i class="new">new</i>':"";
+		// $cls_banchay = ($v["spbanchay"]>0)?'<i class="sale"></i>':"";
+		$giasp = ($v["giakm"]>0)?$v["giakm"]:$v["gia"];
+		$gia = ($giasp>0)?num_format($giasp).'<sup>vnđ</sup>/Kg':_lienhe;
+		$s_gia = "";
+		if($v["giakm"]>0) {
+			$s_gia .= '<span>'.num_format($v["giakm"]).'<sup>vnđ</sup>/Kg</span>';
+			$s_gia .= '<del>'.num_format($v["gia"]).'<sup>vnđ</sup>/Kg</del>';
+		}else{
+			$s_gia .= '<span>'.$gia.'</span>';
+		}
+		// $danhgiasao = get_result("select ROUND(AVG(giatri)) as giatri FROM #_danhgiasao 
+		// where id_sanpham='".$v["id"]."' order by time desc");
+		// if($danhgiasao[0]['giatri']==0){$num_danhgiasao=0;}
+		// else{$num_danhgiasao=$danhgiasao[0]['giatri'];};
+		// $linkct="";
+		// $prostar='';
+		// for($i=1;$i<=5;$i++) { 
+			
+		// 	if($i<=$danhgiasao[0]['giatri']){
+		// 		$prostar .='<i class="fas active fa-star"></i>';
+		// 	}else{
+		// 		$prostar .='<i class="fas fa-star"></i>';
+		// 	}
+		// }
+		if(($options["slick"])){
+			$imgurl='<img src="images/1x1.png" data-lazy="'._upload_sanpham_l.$v["thumb"].
+			'" alt="'.$v["ten"].'" />';
+			$slickdiv = '<div class="slick-box-item">';
+			$slickenddiv = '</div>';
+			$wowclass="";
+		}else{
+			$imgurl='<img data-src="'._upload_sanpham_l.$v["thumb"].'" alt="'.$v["ten"].
+			'" class="lazy" />';
+			$slickdiv=$slickenddiv="";
+			$wowclass='';
+		}
+		// $linkct= '<a href="'.$link.'" class="chitietnt" >Xem chi tiết</a>';
+		// $linkct .= '<a href="#" data-id="'.$v["id"].'" class="dathang">
+		// <i class="fas fa-shopping-cart"></i> Đặt hàng</a>';
+		// $linkct = '<a href="#" data-id="'.$v["id"].'" class="muangay">
+		// Thêm vào giỏ</a>';
+		echo $slickdiv.'<div class="pr-box pr-style-2 name '.$wowclass.'" >
 		<article>
 				<a href="'.$link.'" class="imgsp zoom_hinh">'.$imgurl.$cls_moi.$cls_banchay.
 				$giaspgiam.'</a> 

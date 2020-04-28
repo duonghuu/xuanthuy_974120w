@@ -6,12 +6,19 @@
 %mybs-carousel-horizontal{
   .carousel-indicators{
     position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
     li{
       width: percentage(1/8);
       height: auto;
+      @include flex(unset);
+      display: inline-block;
       figure{
         position: relative;
-        padding-top: percentage(630/800);
+        padding-top: percentage(220/280);
         margin-bottom: 0;
         img{
           @extend %mybs-carousel-img;
@@ -20,9 +27,10 @@
     }
   }
   .carousel-slider{
+      position: relative;
     .carousel-item{
       position: relative;
-      padding-top: percentage(630/800);
+      padding-top: percentage(220/280);
       img{
         @extend %mybs-carousel-img;
       }
@@ -81,6 +89,6 @@
   }
 }
 .mybs-carousel{
-  @extend %mybs-carousel-verticle;
+  @extend %mybs-carousel-horizontal;
   
 }

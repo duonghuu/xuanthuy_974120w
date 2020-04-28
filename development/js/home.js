@@ -6,7 +6,7 @@ $('.dmsanpham-main').on({
       lazyLoad: 'ondemand',
       infinite: true,
       accessibility: false,
-      slidesToShow: 3,
+      slidesToShow: 5,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 3000,
@@ -32,7 +32,7 @@ $('.dmsanpham-main').on({
           }
       }]
   });
-  $('.tinnb-main').on({
+  $('.video-main').on({
         beforeChange: function(event, slick, currentSlide, nextSlide) {
             myLazyLoad.update();
         }
@@ -42,13 +42,13 @@ $('.dmsanpham-main').on({
         accessibility: false,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         speed: 1000,
         arrows: true,
         centerMode: false,
         dots: false,
-        vertical: true,
+        // vertical: true,
         draggable: true,
         responsive: [{
             breakpoint: 830,
@@ -62,7 +62,7 @@ $('.dmsanpham-main').on({
             }
         }]
     });
-    $('.ykien-main').on({
+    $('.spnoibat-main').on({
           beforeChange: function(event, slick, currentSlide, nextSlide) {
               myLazyLoad.update();
           }
@@ -70,9 +70,9 @@ $('.dmsanpham-main').on({
           lazyLoad: 'ondemand',
           infinite: true,
           accessibility: false,
-          slidesToShow: 2,
+          slidesToShow: 4,
           slidesToScroll: 1,
-          autoplay: true,
+          autoplay: false,
           autoplaySpeed: 3000,
           speed: 1000,
           arrows: true,
@@ -82,12 +82,12 @@ $('.dmsanpham-main').on({
           responsive: [{
               breakpoint: 800,
               settings: {
-                  slidesToShow: 2
+                  slidesToShow: 3
               }
           },{
               breakpoint: 500,
               settings: {
-                  slidesToShow: 1
+                  slidesToShow: 2
               }
           },{
               breakpoint: 430,

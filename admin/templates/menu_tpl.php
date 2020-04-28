@@ -63,7 +63,7 @@
         || $_GET['com']=='yahoo') echo ' activemenu' ?>" id="menu_nt"><a href="" title="" 
         class="exp"><span>Marketing Online</span><strong></strong></a>
         <ul class="sub">
-          <?php //phanquyen_menu('Mạng xã hội','lkweb','man','mxh'); ?>
+          <?php phanquyen_menu('Mạng xã hội','lkweb','man','mxh'); ?>
           <?php //phanquyen_menu('Mạng xã hội footer','lkweb','man','mxhft'); ?>
           <?php //phanquyen_menu('Hình thanh toán','lkweb','man','mxhle'); ?>
           <?php //phanquyen_menu('Quản lý liên kết web','lkweb','man','lkweb'); ?>

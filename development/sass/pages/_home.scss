@@ -8,7 +8,7 @@
     @include box(134px, 7px);
     @include relative($bottom: -5px);
 }
-.idx-tit {
+%idx-tit-css {
     @include grid($display: flex, $align-items: flex-end, $justify-content: center);
     position: relative;
     margin-bottom: 5px;
@@ -23,6 +23,208 @@
             color: $theme-color;
             display: inline-block;
             position: relative;
+        }
+    }
+}
+
+.idx-tit{
+    background-color: #f6f6f6;
+    @include grid($display: flex, $align-items: center, $justify-content: space-between);
+    margin: 20px 0;
+    .idx-tit__left{
+        @include flex(1);
+        @include grid(inline-flex, $align-items: center);
+        h2{
+            @include setFont(18px, #333, 700, "Tahoma");
+            @include grid(inline-flex, $align-items: center, $justify-content: center);
+            position: relative;
+            text-transform: uppercase;
+            margin-bottom: 0;
+            padding: 12px 12px 12px 42px;
+            a{
+                color: #333;
+            }
+            @include p-el(after, $el-width: 100%, $el-height: 3px){
+              @include absolute($left: 0px, $top: 0px);
+              background-color: $theme-color;
+            };
+            @include p-el(before, $el-width: 19px, $el-height: 19px){
+                content: url("images/dm-icon.png");
+                @include absolute($left: 12px);
+            };
+        }
+        .idx-tit__leftsub{
+            a{
+                @include grid(inline-flex, $align-items: center);
+                @include setFont(14px, #333, 400, "Tahoma");
+                position: relative;
+                    margin-left: 40px;
+                @include doubly{
+                    @include p-el(before, $el-width: 1px, $el-height: 14px){
+                      background-color: #333;
+                      @include absolute($left: -20px);
+                    };
+                }
+
+            }
+        }
+    }
+    .idx-tit__right{}
+}
+.dmsanpham{
+    padding: 50px 0 30px;
+    &-main{
+        margin: 0 -1em;
+    }
+    &-item{
+        padding: 0 1em;
+        a{
+            display: block;
+            text-align: center;
+            figure{
+                padding: 4px;
+                background-color: #fff;
+                border: 4px solid $theme-color;
+                border-radius: 100%;
+                overflow: hidden;
+                position: relative;
+                img{
+                    @include box(100%, 100%, 100%);
+                }
+            }
+            h2{
+                text-transform: uppercase;
+                @include setFont(14px, #fff, 400, $font-UTM-Androgyne);
+                display: inline-block;
+                line-height: 36px;
+                padding: 0 30px;
+                border-radius: 20px;
+                margin: 5px 0 0;
+                @include bg("dm-btn.png",$background-repeat: repeat,$background-size: null,$background-position: 0 0);
+            }
+        }
+    }
+}
+.haisanngon{
+    @include bg("haisanngon.jpg",$background-repeat: no-repeat,$background-size: cover,$background-position: 0 0);
+    padding: 30px 0;
+    .title{
+        @include setFont(31px, $theme-color, 700, $font-text);
+        margin-bottom: 20px;
+    }
+}
+.spnoibat{
+
+}
+.spnoibat-main{
+    margin: 0 -12.5px;
+}
+.video{
+    padding: 30px 0;
+    .title{
+        @include setFont(37px, $theme-color, 700, $font-text);
+        text-transform: capitalize;
+        text-align: center;
+    }
+    .desc{
+        @include setFont(16px, #333, 400, $font-text);
+        text-align: center;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        @include bg("video-tit.png",$background-repeat: no-repeat,
+            $background-size: null,$background-position: center bottom);
+    }
+    &-main{
+        margin: 0 -1em;
+    }
+    &-item{
+        padding: 0 1em;
+        a{
+            display: block;
+            figure{
+                position: relative;
+                padding-top: percentage(267/369);
+                img{
+                    @extend %img-fill;
+                    object-fit: cover;
+                    object-position: center top;
+                }
+            }
+            h5{
+                @include setFont(16px, #000, 700, $font-text);
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+.thucdon{
+    background-size: cover;
+    padding: 50px 0 25px;
+    .title{
+        @include setFont(34px, #fff, 700, $font-text);
+
+        text-transform: capitalize;
+        a{
+            color: #fff;
+        }
+    }
+    .nav-pills {
+        @include justify-content(center);
+        margin: 10px 0 20px;
+        li{
+                margin-bottom: 5px;
+            .nav-link{
+                border-radius: 20px;
+                color: #fff;
+                border: 1px solid #fff;
+                &.active{
+                    background-color: transparent;
+                    color: #008ce5;
+                    border-color: #008ce5;
+                }
+
+            }
+            @include doubly{
+                margin-left: 10px;
+            };
+        }
+        
+    }
+    &-box{
+        $product-gutter: percentage(34/1200);
+        @include grid-col($col: 3, $grid-columns: 12, $gutter: $product-gutter);
+        a{
+            display: block;
+            text-align: center;
+            figure{
+                position: relative;
+                padding-top: percentage(220/280);
+                margin-bottom: 20px;
+                img{
+                    @extend %img-fill; 
+                    object-fit: cover;
+                    object-position: top center;
+                }
+            }
+            h3{
+                @include setFont(15px, #fff, 400, $font-text);
+            }
+            p{
+                @include setFont(15px, #ffa800, 400, $font-text);
+                margin-bottom: 0;
+                span{}
+                del{}
+            }
+        }
+    }
+    .xemthucdon{
+        text-align: center;
+        a{
+            display: inline-block;
+            background-color: $theme-color;
+            @include setFont(15px, #fff, 400, $font-text);
+            padding: 7px 1em;
+            border-radius: 5px;
         }
     }
 }

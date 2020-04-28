@@ -12,13 +12,9 @@
                <section>
                 <a href="<?= $v["link"] ?>" class="slider-link"><picture>
                   <source media="(min-width: 1024px)" srcset="<?= _upload_hinhanh_l.$v["thumb"] ?>" />
-                    <source media="(min-width: 550px)" srcset="thumb/768x382/1/<?= _upload_hinhanh_l.$v["thumb"] ?>" />
-                      <?php /* 
-                      <img src="thumb/425x212/1/<?= _upload_hinhanh_l.$v["thumb"] ?>" 
+                    <source media="(min-width: 550px)" srcset="thumb/768x290/1/<?= _upload_hinhanh_l.$v["thumb"] ?>" />
+                      <img src="thumb/425x162/1/<?= _upload_hinhanh_l.$v["thumb"] ?>" 
                                             alt="<?= $v["ten"] ?>" /> 
-                      */?>
-                      <img src="<?= _upload_hinhanh_l.$v["thumb"] ?>" 
-                      alt="<?= $v["ten"] ?>" />
                     </picture></a>
                     <?php /* 
                     <div class="slider-text-bg">

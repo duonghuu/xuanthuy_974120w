@@ -17,7 +17,7 @@ switch($type){
 	case 'thuc-don':
 	switch($act){
 		case 'danhmuc':
-		$config['type'] = array('ten','seo','hinhanh','noibat');
+		$config['type'] = array('ten','seo','noibat');
 		$config['title'] = array('noibat'=>"Nổi bật",'tieubieu'=>"Hiện menu",'hinhanh2'=>"Icon");
 		@define ( _width_thumb , 300 );
 		@define ( _height_thumb , 300 );
@@ -56,11 +56,11 @@ switch($type){
 			'spmoi'=>"Mới",'spbanchay'=>"Bán chạy","mota"=>"Mô tả","toado"=>"Iframe google map",
 			"mota2"=>"Mô tả",'mattien'=>"Số người","dientich"=>"Giá","thuonghieu"=>"Thương hiệu",
 			"vitri"=>"Vị trí");
-		@define ( _width_thumb , 400 );
-		@define ( _height_thumb , 315 );
-		@define ( _style_thumb , 2 );
-		@define ( _width_thumb2 , 700 );
-		@define ( _height_thumb2 , 550 );
+		@define ( _width_thumb , 500 );
+		@define ( _height_thumb , 390 );
+		@define ( _style_thumb , 1 );
+		@define ( _width_thumb2 , 600 );
+		@define ( _height_thumb2 , 470 );
 		break;
 	}
 	break;
@@ -526,6 +526,14 @@ switch($type){
 		break;
 	}
 	break;
+	case 'video':
+	switch($act){
+		default:
+		$config['type'] = array('home');
+		break;
+	}
+	break;
+	case 'txtvideo':
 	case 'txtban-chay':
 	switch($act){
 		default:

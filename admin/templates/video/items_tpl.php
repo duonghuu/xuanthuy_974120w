@@ -44,6 +44,11 @@
   <div style="float:left;">
     <input type="button" class="blueB" value="Thêm" onclick="location.href='index.php?com=video&act=add&type=<?=$_REQUEST['type']?>'" />
     <input type="button" class="blueB" value="Xoá Chọn" id="xoahet" />
+    <?php if(in_array('home',$config['type'])) { ?>
+      <input type="button" class="redB" value="Thông tin" 
+      onclick="location.href='index.php?com=about&act=capnhat<?php if($_REQUEST['type']!='') 
+      echo'&type=txt'. $_REQUEST['type'];?>'" />
+      <?php } ?>
   </div>  
 </div>
 <div class="widget">

@@ -3,7 +3,7 @@
 	$where = " hienthi=1 and type='".$type."' order by stt,id desc";	
 
 	$dem = get_fetch("SELECT count(id) AS numrows FROM #_video where $where");
-
+	$bread->add($title_cat,'');
 	$totalRows = $dem['numrows'];
 	$page = $_GET['p'];
 	$pageSize = $company['soluong_sp'];//Số item cho 1 trang

@@ -7,9 +7,35 @@
     height: $height-map;
 }
 %copyright-font {
-    @include setFont(12px, #fff, 400, $font-text);
+    @include setFont(13px, #fff, 400, $font-text);
 }
+%ft-thongke-css{
+    @extend %reset-list;
 
+    @include boxstyle($display: flex);
+    li {
+        @extend %copyright-font;
+
+        @include boxstyle($display: flex, $align-items: center);
+        position: relative;
+        margin: 5px 0;
+
+        span {
+            margin-left: 4px;
+        }
+
+        & + li {
+            margin-left: 2em;
+
+            &::before {
+                content: "";
+                background-color: #fff;
+                @include box(1px, 12px);
+                @include absolute($left: -1em);
+            }
+        }
+    }
+}
 
 #footer {
     position: relative;
@@ -18,20 +44,23 @@
     background-size: cover;
     .ft-top{
         // background-color: $bg-footer;
+        @include bg("ft-bg.jpg",$background-repeat: no-repeat,
+            $background-size: cover,$background-position: 0 0);
     }
     .ft-flex {
-        @include boxstyle($display: flex, $justify-content: space-between);
-        padding: 30px 0;
+        @include boxstyle($display: flex, $justify-content: space-between, $align-items: flex-start);
+        padding: 40px 0;
         .ft-logo { 
-            a{
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
                 img{
                     
                 }
-            }
         }
         .ft-info {
             position: relative;
-            width: percentage(520/1200);
+            width: percentage(200/1200);
             color: #fff;
         }
 
@@ -41,9 +70,9 @@
         }
 
         .ft-fanpage {
-            width: percentage(280/1200);
+            width: percentage(340/1200);
             .fanpageplace {
-                height: 180px;
+                height: 210px;
                 overflow: hidden;
             }
         }
@@ -53,7 +82,28 @@
 
         .ft-social{
         }
-        .ft-video{
+        .ft-chinhanh{
+            width: percentage(350/1200);
+            padding-left: 30px;
+            border-left: 2px solid #fff;
+            article{
+                @include doubly{
+                     margin-top: 10px;
+                };
+                h5{
+                   @include setFont(14px, #fff, 700, $font-text); 
+                   margin-bottom: 10px;
+                   text-transform: uppercase;
+                }
+                p{
+                   @include setFont(14px, #fff, 400, $font-text); 
+                   margin-bottom: 3px;
+                   line-height: 1;
+                   @include doubly{
+                        margin-top: 10px;
+                   };
+                }
+            }
         }
 
         .ft-baiviet {
@@ -87,22 +137,23 @@
     }
 
     .ft-company {
-        // @include setFont(em(52), #fc0214, 400, $font-SFUBelleRegular );
-        // line-height: 1;
-        // a {
-        //     color: #fc0214;
-        // }
+        @include setFont(em(18), #fff, 700);
+        text-transform: uppercase;
+        line-height: 1;
+        a {
+            color: #fff;
+        }
     }
 
     .ft-tit {
-        margin-bottom: 30px;
-        text-transform: capitalize;
+        margin-bottom: 40px;
+        text-transform: uppercase;
         strong, span {
                 position: relative;
-                @include setFont(20px, #fff, 400, $font-SVN-Lobster);
-                @include p-el(before, $el-width: 60px, $el-height: 2px){
-                  background-color: #ffb800;
-                  @include absolute($left: 0px, $bottom: -10px);
+                @include setFont(15px, #fff, 700);
+                @include p-el(before, $el-width: 53px, $el-height: 3px){
+                  background-color: #fff;
+                  @include absolute($left: 0px, $bottom: -15px);
             };
         }
 
@@ -123,10 +174,10 @@
 
     .copyright {
         position: relative;
-        @include background-opacity($bg-copyright, 0.5);
+        background-color: $bg-copyright;
         .ft-wrap {
-            min-height: 40px;
-            @include boxstyle($display: flex, $justify-content: space-between, $align-items: center);
+            min-height: 53px;
+            @include boxstyle($display: flex, $justify-content: center, $align-items: center);
             position: relative;
             .text {
                 @extend %copyright-font;
@@ -134,37 +185,13 @@
             }
 
             ul.ft-thongke {
-                @extend %reset-list;
-
-                @include boxstyle($display: flex);
-                li {
-                    @extend %copyright-font;
-
-                    @include boxstyle($display: flex, $align-items: center);
-                    position: relative;
-                    margin: 5px 0;
-
-                    span {
-                        margin-left: 4px;
-                    }
-
-                    & + li {
-                        margin-left: 2em;
-
-                        &::before {
-                            content: "";
-                            background-color: #fff;
-                            @include box(1px, 12px);
-                            @include absolute($left: -1em);
-                        }
-                    }
-                }
+                
             }
         }
     }
 }
 .codebando, .codebando iframe{
-    // @extend %map-style;
+    @extend %map-style;
 }
 .mxh{
     @extend %mxh-style;

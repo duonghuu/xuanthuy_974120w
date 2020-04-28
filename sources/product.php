@@ -116,6 +116,16 @@ if($id>0)
 		$loc_danhmuc = $title_bar['id_danhmuc'];
 		$a_danhmuc["id_danhmuc"] = $title_bar["id_danhmuc"];
 		$a_danhmuc["id_list"] = $title_bar["id"];
+		if($a_danhmuc["id_danhmuc"]>0){
+			$a_danhmuc_detail = get_fetch("select id,ten$lang as ten,tenkhongdau,type from #_product_danhmuc where id='".$a_danhmuc["id_danhmuc"]."'");
+			$lin = get_url($a_danhmuc_detail,$com,1);
+			$bread->add($a_danhmuc_detail["ten"],$lin);	
+		}
+		if($a_danhmuc["id_list"]>0){
+			$a_danhmuc_detail = get_fetch("select id,ten$lang as ten,tenkhongdau,type from #_product_list where id='".$a_danhmuc["id_list"]."'");
+			$lin = get_url($a_danhmuc_detail,$com,2);
+			$bread->add($a_danhmuc_detail["ten"],$lin);	
+		}
 		$title_cat = $title_bar['ten'];	$mota = $title_bar['mota'];	$noidung = $title_bar['noidung'];
 		$title = $title_bar['title'];$keywords = $title_bar['keywords'];$description = $title_bar['description'];
 		$h1 = $title_bar['h1'];$h2 = $title_bar['h2'];$h3 = $title_bar['h3'];

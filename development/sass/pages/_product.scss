@@ -11,14 +11,14 @@
     font-weight: 700;
     font-size: 20px;
 }
-$product-gutter: percentage(26/1200);
+$product-gutter: percentage(24/1200);
 .product-grid{
     @include grid($display: flex, $flex-wrap: wrap, $gutter: $product-gutter);
 
 }
 /*san pham*/
 .slick-box-item {
-    padding: 0 em(15);
+    padding: 0 12.5px;
 }
 .pr-box{
     @include grid-col($col: 3, $grid-columns: 12, $gutter: $product-gutter);
@@ -35,6 +35,7 @@ $product-gutter: percentage(26/1200);
         position:relative;
         margin: 0 auto;
         background: #fff;
+        border: 1px solid #ccc;
         .imgsp{
             display: block;
             overflow: hidden;
@@ -47,11 +48,12 @@ $product-gutter: percentage(26/1200);
                 object-position: top center;
             }
             .giam{
-                // @include absolute($top: 10px, $left: 10px);
-                // @include box(40px, 40px, 100%);
-                // @include setFont(12px, #fff);
-                // @include boxstyle($display: inline-flex, $justify-content: center, $align-items: center);
-                // background-color: #fc0214;
+                @include absolute($top: 5px, $right: 5px);
+                @include box(53px, 53px, 100%);
+                @include setFont(14px, #fff);
+                @include boxstyle($display: inline-flex, $justify-content: center, $align-items: center);
+                background-color: #ed1c24;
+                border: 2px solid #fff;
             }
         }
 
@@ -59,24 +61,30 @@ $product-gutter: percentage(26/1200);
             z-index: 6;
             position: relative;
             text-align: center;
+            padding: 8px;
             h3{
-                @include setFont(16px, #333, 400);
+                @include setFont(16px, #333, 700);
                 @include setTagAHover(#333, $theme-color);
-                margin-bottom: 0;
+                
+                margin-bottom: 6px;
+
                 a{
                     @include transition(all .2s ease);
-                    line-height: 1.3;
+                    line-height: 1.5;
+                    display: block;
                 }
             }
 
             p{
                 @include boxstyle($display: flex, $flex-wrap: wrap, 
-                    $align-items: flex-end, $justify-content: center);
-                @include setFont(16px, #333);
+                    $align-items: flex-end, $justify-content: space-between);
+                @include setFont(12px, #8c8c8c);
                 margin: 0;
                 line-height: 1.5;
                 del{
-                    color: #8c8c8c;
+                    @include flex(1);
+                    line-height: 1;
+                    display: block;
                 }
 
                 strong{
@@ -89,8 +97,20 @@ $product-gutter: percentage(26/1200);
                 }
 
                 span{
-                    color: $theme-color;
-                    margin-left: 5px;
+                    @include setFont(18px, #f76b21, 700);
+                    line-height: 1;
+                    display: block;
+                    @include flex(1);
+                }
+            }
+            .xemchitiet{
+                @include setFont(14px, #fff, 400);
+                margin-top: 20px;
+                line-height: 35px;
+                border-radius: 5px;
+                background-color: #008ce5;
+                a{
+                    color: #fff;
                 }
             }
         }
@@ -105,6 +125,34 @@ $product-gutter: percentage(26/1200);
             cursor: pointer;
         }
     }
+    &.pr-style-2{
+        article{
+            background-color: transparent;
+            border: none;
+            .info{
+                h3{
+                    a{
+                        color: #0a71bd;
+                    }
+                }
+                p{
+                    @include setFont(18px, #df1112, 400, $font-UTM-Androgyne);
+                    line-height: 1;
+                    @include justify-content(center);
+                    span{
+                        color: #df1112;
+                        width: auto;
+                        margin: 0 8px;
+                    }
+                    del{
+                        width: auto;
+                        font-size: 12px;
+                        color: #333;
+                    }
+                }
+            }
+        }
+    } 
 }
 
 /*end san pham*/

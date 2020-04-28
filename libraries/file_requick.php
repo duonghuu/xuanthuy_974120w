@@ -156,6 +156,15 @@ switch($com)
 	$template = isset($_GET['id']) ? "product_detail" : "product";
 	$type_og = isset($_GET['id']) ? "article" : "object";
 	break;
+	case 'hai-san':
+	$type = "hai-san";
+	$title = "Hải sản sống";
+	$title_cat = "Hải sản sống";
+	$title_other = _sanphamkhac;
+	$source = "product";
+	$template = isset($_GET['id']) ? "product_detail" : "product";
+	$type_og = isset($_GET['id']) ? "article" : "object";
+	break;
 	case 'thuong-hieu':
 	$type = "thuc-don";
 	$title = _thucdon;

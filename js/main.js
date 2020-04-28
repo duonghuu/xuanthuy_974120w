@@ -207,11 +207,11 @@ $(document).ready(function() {
       js.src = "//connect.facebook.net/"+js_langfb+"/sdk.js#xfbml=1&version=v2.8";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-    //$(".codebando").html(js_bando);
-    if(js_linkvideo){ 
-      $("#video-idx").html('<iframe id="iframe" src="https://www.youtube.com/embed/'+js_linkvideo+
-    '" frameborder="0" allowfullscreen></iframe>');
-    }
+    $(".codebando").html(js_bando);
+    // if(js_linkvideo){ 
+    //   $("#video-idx").html('<iframe id="iframe" src="https://www.youtube.com/embed/'+js_linkvideo+
+    // '" frameborder="0" allowfullscreen></iframe>');
+    // }
   }else{
     var fired = false;
     window.addEventListener("scroll", function(){
@@ -223,11 +223,11 @@ $(document).ready(function() {
           js.src = "//connect.facebook.net/"+js_langfb+"/sdk.js#xfbml=1&version=v2.8";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-        //$(".codebando").html(js_bando);
-        if(js_linkvideo){ 
-          $("#video-idx").html('<iframe id="iframe" src="https://www.youtube.com/embed/'+js_linkvideo+
-        '" frameborder="0" allowfullscreen></iframe>');
-        }
+        $(".codebando").html(js_bando);
+        // if(js_linkvideo){ 
+        //   $("#video-idx").html('<iframe id="iframe" src="https://www.youtube.com/embed/'+js_linkvideo+
+        // '" frameborder="0" allowfullscreen></iframe>');
+        // }
         fired = true;
       }
     }, true);
@@ -239,17 +239,17 @@ $(document).ready(function() {
     //       'top': vitri + 'px'
     //     })
     //   });
-    $(window).scroll(function(){
-      var cach_top = $(window).scrollTop();
-      var heaigt_header = $('.hd-bg').height();
-      if(cach_top >= heaigt_header){
-        $('.nav-bg').css({position: 'fixed', top: '0px', zIndex:99999});
-        $('.nav-bg').addClass('fixed');
-      }else{
-        $('.nav-bg').css({position: 'relative', top: 'auto'});
-        $('.nav-bg').removeClass('fixed');
-      }
-    });
+    // $(window).scroll(function(){
+    //   var cach_top = $(window).scrollTop();
+    //   var heaigt_header = $('.hd-bg').height();
+    //   if(cach_top >= heaigt_header){
+    //     $('.nav-bg').css({position: 'fixed', top: '0px', zIndex:99999});
+    //     $('.nav-bg').addClass('fixed');
+    //   }else{
+    //     $('.nav-bg').css({position: 'relative', top: 'auto'});
+    //     $('.nav-bg').removeClass('fixed');
+    //   }
+    // });
   }
   
 });
@@ -263,7 +263,7 @@ $('.dmsanpham-main').on({
       lazyLoad: 'ondemand',
       infinite: true,
       accessibility: false,
-      slidesToShow: 3,
+      slidesToShow: 5,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 3000,
@@ -289,7 +289,7 @@ $('.dmsanpham-main').on({
           }
       }]
   });
-  $('.tinnb-main').on({
+  $('.video-main').on({
         beforeChange: function(event, slick, currentSlide, nextSlide) {
             myLazyLoad.update();
         }
@@ -299,13 +299,13 @@ $('.dmsanpham-main').on({
         accessibility: false,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         speed: 1000,
         arrows: true,
         centerMode: false,
         dots: false,
-        vertical: true,
+        // vertical: true,
         draggable: true,
         responsive: [{
             breakpoint: 830,
@@ -319,7 +319,7 @@ $('.dmsanpham-main').on({
             }
         }]
     });
-    $('.ykien-main').on({
+    $('.spnoibat-main').on({
           beforeChange: function(event, slick, currentSlide, nextSlide) {
               myLazyLoad.update();
           }
@@ -327,9 +327,9 @@ $('.dmsanpham-main').on({
           lazyLoad: 'ondemand',
           infinite: true,
           accessibility: false,
-          slidesToShow: 2,
+          slidesToShow: 4,
           slidesToScroll: 1,
-          autoplay: true,
+          autoplay: false,
           autoplaySpeed: 3000,
           speed: 1000,
           arrows: true,
@@ -339,12 +339,12 @@ $('.dmsanpham-main').on({
           responsive: [{
               breakpoint: 800,
               settings: {
-                  slidesToShow: 2
+                  slidesToShow: 3
               }
           },{
               breakpoint: 500,
               settings: {
-                  slidesToShow: 1
+                  slidesToShow: 2
               }
           },{
               breakpoint: 430,
@@ -355,47 +355,6 @@ $('.dmsanpham-main').on({
           ]
       });
 
-function doEnter(evt){
-    var key;
-    if(evt.keyCode == 13 || evt.which == 13){
-     onSearch(evt);
-   }
- }
- function onSearch(evt) {
-   var keyword1 = $('.keyword:eq(0)').val();
-   var keyword2 = $('.keyword:eq(1)').val();
-   if(keyword1==lang_nhaptukhoatimkiem)
-   {
-    keyword = keyword2;
-  }
-  else
-  {
-    keyword = keyword1;
-  }
-  if(keyword=='' || keyword==lang_nhaptukhoatimkiem)
-  {
-    alert(lang_chuanhaptukhoa);
-  }
-  else{
-    location.href = "tim-kiem/keyword="+keyword;
-  }
-}
- function onSearch2(evt) {
-   var id_huong = $('#id_huong').val();
-   var id_danhmuc = $('#id_danhmuc').val();
-   var id_dientich = $('#id_dientich').val();
-   var id_khoangia = $('#id_khoangia').val();
-  location.href = "tim-kiem/id_huong="+id_huong+"&id_danhmuc="+id_danhmuc+"&id_dientich="+id_dientich+"&id_khoangia="+id_khoangia;
-}
-$(document).ready(function() {
-  $('.timkiem_icon').click(function(event) {
-    if($('#search').hasClass('hien')){
-      $('#search').removeClass('hien');
-    }else{
-      $('#search').addClass('hien');
-    }
-  });
-});
 $(document).ready(function() {
      $('body').append('<div id="toptop" title="Lên đầu trang"><i class="fas fa-arrow-circle-right"></i></div>');
      $(window).scroll(function() {
